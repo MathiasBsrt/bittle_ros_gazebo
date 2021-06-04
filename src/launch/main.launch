@@ -1,0 +1,22 @@
+<launch>
+
+  <!-- load the urdf file -->
+<param name="robot_description" textfile="$(find bittle)/src/urdf/bittle.urdf"/>
+
+  <!-- spawn the urdf file in the simulation -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" ns="/bittle" args="-file $(find bittle)/src/urdf/bittle.urdf -urdf -z 1 -model bittle" />
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find bittle)/src/config/bittle.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/bittle" args="left_back_knee_joint left_back_shoulder_joint left_front_knee_joint left_front_shoulder_joint right_back_knee_joint right_back_shoulder_joint right_front_knee_joint right_front_shoulder_joint joint_state_controller"/>
+
+  <!-- convert joint states to TF transforms-->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/bittle/joint_states" />
+  </node>
+
+</launch>

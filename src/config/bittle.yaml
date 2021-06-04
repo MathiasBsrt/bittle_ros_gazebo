@@ -1,0 +1,72 @@
+# .yaml config file
+#
+# The PID gains and controller settings must be saved in a yaml file that gets loaded
+# to the param server via the roslaunch file (bittle_control.launch).
+
+bittle:
+  # Publish all joint states -----------------------------------
+  # Creates the /joint_states topic necessary in ROS
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 1000
+
+  # Effort Controllers ---------------------------------------
+  battery_joint:
+    type: effort_controllers/JointPositionController
+    joint: battery_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  cover_joint:
+    type: effort_controllers/JointPositionController
+    joint: cover_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  imu_joint:
+    type: effort_controllers/JointPositionController
+    joint: imu_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  left_back_knee_joint:
+    type: effort_controllers/JointPositionController
+    joint: left_back_knee_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  left_back_shoulder_joint:
+    type: effort_controllers/JointPositionController
+    joint: left_back_shoulder_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  left_front_knee_joint:
+    type: effort_controllers/JointPositionController
+    joint: left_front_knee_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  left_front_shoulder_joint:
+    type: effort_controllers/JointPositionController
+    joint: left_front_shoulder_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  mainboard_joint:
+    type: effort_controllers/JointPositionController
+    joint: mainboard_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  right_back_knee_joint:
+    type: effort_controllers/JointPositionController
+    joint: right_back_knee_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  right_back_shoulder_joint:
+    type: effort_controllers/JointPositionController
+    joint: right_back_shoulder_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  right_front_knee_joint:
+    type: effort_controllers/JointPositionController
+    joint: right_front_knee_joint
+    pid: {p: 10.0, i: 0.0, d: 0.5}
+  #---------
+  right_front_shoulder_joint:
+    type: effort_controllers/JointPositionController
+    joint: right_front_shoulder_joint
+    pid: {p: 1.0, i: 1.0, d: 1.0}
