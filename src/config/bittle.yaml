@@ -3,7 +3,7 @@
 # The PID gains and controller settings must be saved in a yaml file that gets loaded
 # to the param server via the roslaunch file (bittle_control.launch).
 
-bittle:
+bittle_ros_gazebo:
   # Publish all joint states -----------------------------------
   # Creates the /joint_states topic necessary in ROS
   joint_state_controller:

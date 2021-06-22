@@ -1,3 +1,7 @@
+'''
+@author Mathias Bossaerts
+Example to control bittle on gazebo
+'''
 #!/usr/bin/env python3
 from std_msgs.msg import Float64
 import math
@@ -21,7 +25,7 @@ joint_state_controller
 '''
 
 def talker():
-    pub = rospy.Publisher('/bittle/right_front_shoulder_joint/command', Float64, queue_size=10) # one publisher per joint
+    pub = rospy.Publisher('/bittle_ros_gazebo/right_front_shoulder_joint/command', Float64, queue_size=10) # one publisher per joint
     rospy.init_node('talker', anonymous=True)
     rate = rospy.Rate(10) # 10hz
     while not rospy.is_shutdown():

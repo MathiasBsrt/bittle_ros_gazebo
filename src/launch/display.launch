@@ -7,7 +7,7 @@
     <arg name="headless" default="false"/>
     <arg name="pause" default="false"/>  <!-- Start Gazebo with a blank world -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
-        <arg name="world_name" value="$(find bittle)/src/worlds/model.world"/>
+        <arg name="world_name" value="$(find bittle_ros_gazebo)/src/worlds/model.world"/>
         <arg name="debug" value="$(arg debug)" />
         <arg name="gui" value="$(arg gui)" />
         <arg name="paused" value="$(arg pause)"/>
@@ -16,5 +16,5 @@
     </include>
 
     <!--Include the bittle launch file with the spawner and controller-->
-    <include file="$(find bittle)/src/launch/main.launch"/>
+    <include file="$(find bittle_ros_gazebo)/src/launch/main.launch"/>
 </launch>
