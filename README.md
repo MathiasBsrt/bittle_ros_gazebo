@@ -45,10 +45,22 @@ then move this repository in your ``catkin_ws/src`` folder.
 
 Then : run
 ```sh
-rosdep install bittle
+rosdep install bittle_ros_gazebo
 ```
 
 and use catkin_make in ``catkin_ws``
+
+## Launch
+
+First source your devel/setup
+
+To launch the gazebo simulation you need to run this command in the ``src/launch``:
+```sh
+roslaunch display.launch
+```
+
+And in antoher tab you can run a python program to control the robot.
+
 
 ## Informations
 
