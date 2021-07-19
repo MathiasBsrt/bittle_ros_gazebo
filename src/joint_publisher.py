@@ -5,6 +5,7 @@ Example to control bittle on gazebo
 #!/usr/bin/env python3
 from std_msgs.msg import Float64
 import math
+import rospy
 
 '''
 Joint :
