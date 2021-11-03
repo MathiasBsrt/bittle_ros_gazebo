@@ -52,7 +52,11 @@ and use catkin_make in ``catkin_ws``
 
 ## Launch
 
-First source your devel/setup
+First source your devel/setup:
+
+```
+ source devel/setup.bash
+```
 
 To launch the gazebo simulation you need to run this command in the ``src/launch``:
 ```sh
